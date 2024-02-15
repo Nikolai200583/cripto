@@ -1,6 +1,6 @@
 import { cryptoAssets, cryptoData} from './data';
 
-export default function fakeFethCrypto() {
+export function fakeFethCrypto() {
     return new Promise ((resolve)=> {
         setTimeout(()=>{
             resolve(cryptoData)
@@ -8,7 +8,7 @@ export default function fakeFethCrypto() {
     })
 };
 
-export default function fetchAssets() {
+export function fetchAssets() {
     return new Promise ((resolve)=> {
         setTimeout(()=>{
             resolve(cryptoAssets)
