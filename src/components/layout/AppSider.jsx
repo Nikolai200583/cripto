@@ -8,4 +8,7 @@ export default function AppSider() {
   return (
     <Layout.Sider width="25%" style={siderStyle}> 
     <Card>
-     
+      <Statistic/>
+    </Card>
+    </Layout.Sider>
+  )}
