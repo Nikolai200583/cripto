@@ -6,11 +6,11 @@ import { useContext } from "react";
 import CryptoContext from "../context/cripto-context";
 
 const siderStyle = {
-  padding: "1rem",
+  padding: "1rem"
 };
 
 export default function AppSider() {
- const { assets } = useContext(CryptoContext)
+  const { assets } = useContext(CryptoContext);
 
   return (
     <Layout.Sider width="25%" style={siderStyle}>
@@ -30,22 +30,27 @@ export default function AppSider() {
               {
                 title: "Total Profit",
                 value: asset.totalProfit,
-                withTag: true,
+                withTag: true
               },
-              { title: "Total Amount", value: asset.amount, isPlain: true },
+              { title: "Total Amount", value: asset.amount, isPlain: true }
               // { title: "Difference", value: asset.growPercent },
             ]}
             renderItem={(item) => (
               <List.Item>
                 <span>{item.title}</span>
                 <span>
-                {item.withTag && <Tag color={asset.grow ? 'green' : 'red'}> {asset.growPercent}% </Tag>}
-                {item.isPlain && item.value}
-                {!item.isPlain && (
-                  <Typography.Text type={asset.grow ? "success" : "danger"}>
-                    {item.value.toFixed(2)}$
-                  </Typography.Text>
-                )}
+                  {item.withTag && (
+                    <Tag color={asset.grow ? "green" : "red"}>
+                      {" "}
+                      {asset.growPercent}%{" "}
+                    </Tag>
+                  )}
+                  {item.isPlain && item.value}
+                  {!item.isPlain && (
+                    <Typography.Text type={asset.grow ? "success" : "danger"}>
+                      {item.value.toFixed(2)}$
+                    </Typography.Text>
+                  )}
                 </span>
               </List.Item>
             )}
